@@ -1,0 +1,12 @@
+const fs = require("fs");
+
+const readStream = fs.createReadStream("./readMe.txt", "utf8");
+const writeStream = fs.createWriteStream("./writeMe.txt");
+
+readStream.on("data", (chunk) => {
+    console.log("new chunk received:");
+    writeStream.write(chunk);
+});
+readStream.on("end", () => {
+    console.log("the end~!")
+});

@@ -1,0 +1,1 @@
+const writeData = require("./file.js")
